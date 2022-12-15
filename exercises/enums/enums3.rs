@@ -8,7 +8,7 @@ enum Message {
     // TODO: implement the message variant types based on their usage below
     Quit,
     Echo(String),
-    Move(point),
+    Move(Point),
     ChangeColor((u8,u8,u8)),
 }
 
