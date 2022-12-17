@@ -6,9 +6,8 @@
 // before the parentheses on each line. If you're right, it will compile!
 // No hints this time!
 
-// I AM NOT DONE
 
-fn slice(arg: &str) {
+fn string_slice(arg: &str) {
     println!("{}", arg);
 }
 fn string(arg: String) {
@@ -16,14 +15,27 @@ fn string(arg: String) {
 }
 
 fn main() {
-    slice("blue");
-    string("red".to_string());
-    string(String::from("hi"));
-    string("rust is fun!".to_owned());
-    slice("nice weather".into());
-    string(format!("Interpolation {}", "Station"));
-    slice(&String::from("abc")[0..1]);
-    slice("  hello there ".trim());
-    string("Happy Monday!".to_string().replace("Mon", "Tues"));
-    string("mY sHiFt KeY iS sTiCkY".to_lowercase());
+    string_slice("blue");//returns slice
+
+    string("red".to_string());//returns String
+
+    string(String::from("hi"));//returns String
+
+    string("rust is fun!".to_owned());//returns String
+
+    string_slice("nice weather".into());//returns both because into() tries to convert what it gets into what we want
+    string("nice weather".into());//returns both because into() tries to convert what it gets into what we want
+
+    string(format!("Interpolation {}", "Station"));//returns String
+
+    string_slice(&String::from("abc")[0..1]);//returns slice
+
+    string_slice("  hello there ".trim());//returns slice because trim doe not mutate the string, it changes our view of it
+
+    string("Happy Monday!".to_string().replace("Mon", "Tues"));//returns String
+
+    string("mY sHiFt KeY iS sTiCkY".to_lowercase());//returns String
+
+
+
 }
