@@ -31,7 +31,7 @@ pub fn verify<'a>(
             return Err(exercise);
         }
         let percentage = num_done as f32 / total as f32 * 100.0;
-        bar.set_message(format!("({:.1} %)", percentage));
+        bar.set_message(format!("({percentage:.1} %)"));
         bar.inc(1);
     }
     Ok(())
